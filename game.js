@@ -2,7 +2,6 @@
 // https://github.com/kubowania/minesweeper
 
 document.addEventListener('DOMContentLoaded', () => { // notwendig, damit html vor dem js gelesen wird
-    //test
 
     // Sounds
     var snd_gameover = new Audio("sounds/GameOver.mp3");
