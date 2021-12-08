@@ -36,15 +36,15 @@ document.addEventListener('DOMContentLoaded', () => { // notwendig, damit html v
         // Bomben legen (random):
 
         // 1. Arrays anlegen leer vs. mit Bomben
-        const bombArray = Array(bombAmount).fill('bomb') // Füllt einen Array mit "bomb"-Strings
-        const featureArray = Array(featureAmount).fill('whale') // Füllt einen Array mit "whale"-Strings
-        const emptyArray = Array(width * width - bombAmount - featureAmount).fill('valid') // füllt einen Array mit der Anzahl leerer Felder mit "no bomb"-string
+        let bombArray = Array(bombAmount).fill('bomb') // Füllt einen Array mit "bomb"-Strings
+        let featureArray = Array(featureAmount).fill('whale') // Füllt einen Array mit "whale"-Strings
+        let emptyArray = Array(width * width - bombAmount - featureAmount).fill('valid') // füllt einen Array mit der Anzahl leerer Felder mit "no bomb"-string
 
         // 2. Arrays zusammenlegen
-        const gameArray = emptyArray.concat(bombArray, featureArray) // fügt Arrays zusammen
+        let gameArray = emptyArray.concat(bombArray, featureArray) // fügt Arrays zusammen
 
         // 3. Gemischter Array
-        const shuffledArray = gameArray.sort(() => Math.random() - 0.5) // Randomisierte Verteilung
+        let shuffledArray = gameArray.sort(() => Math.random() - 0.5) // Randomisierte Verteilung
 
         // Schleife legt alle Felder im Grid an
         for (let i = 0; i < width * width; i++) { // width*width = 100
@@ -94,10 +94,10 @@ document.addEventListener('DOMContentLoaded', () => { // notwendig, damit html v
         flagsLeft.innerHTML = bombAmount
         sharks = 0
         
-        const bombArray = Array(bombAmount).fill('bomb')
-        const emptyArray = Array(width*width - bombAmount).fill('valid')
-        const gameArray = emptyArray.concat(bombArray)
-        const shuffledArray = gameArray.sort(() => Math.random() -0.5)
+        let bombArray = Array(bombAmount).fill('bomb')
+        let emptyArray = Array(width*width - bombAmount).fill('valid')
+        let gameArray = emptyArray.concat(bombArray)
+        let shuffledArray = gameArray.sort(() => Math.random() -0.5)
         
         for(let i = 0; i < width*width; i++) {
             const square = document.createElement('div')
@@ -125,19 +125,17 @@ document.addEventListener('DOMContentLoaded', () => { // notwendig, damit html v
             const isRightEdge = (i % width === width -1)
         
             if (squares[i].classList.contains('valid')) {
-                if (i > 0 && !isLeftEdge && squares[i - 1].classList.contains('bomb')) total++              // links
-                if (i > 9 && !isRightEdge && squares[i + 1 - width].classList.contains('bomb')) total++     // rechts oben
-                if (i > 9 && squares[i - width].classList.contains('bomb')) total++                         // oben
-                if (i > 9 && !isLeftEdge && squares[i - 1 - width].classList.contains('bomb')) total++      // links oben
-                if (i < 99 && !isRightEdge && squares[i + 1].classList.contains('bomb')) total++            // !rechts
-                if (i < 90 && !isLeftEdge && squares[i - 1 + width].classList.contains('bomb')) total++     // !links unten
-                if (i < 89 && !isRightEdge && squares[i + 1 + width].classList.contains('bomb')) total++    // !rechts unten
-                if (i < 90 && squares[i + width].classList.contains('bomb')) total++                        // !unten
+                if (i > 100 && !isLeftEdge && squares[i - 1].classList.contains('bomb')) total++              // links
+                if (i > 109 && !isRightEdge && squares[i + 1 - width].classList.contains('bomb')) total++     // rechts oben
+                if (i > 109 && squares[i - width].classList.contains('bomb')) total++                         // oben
+                if (i > 109 && !isLeftEdge && squares[i - 1 - width].classList.contains('bomb')) total++      // links oben
+                if (i < 199 && !isRightEdge && squares[i + 1].classList.contains('bomb')) total++            // !rechts
+                if (i < 190 && !isLeftEdge && squares[i - 1 + width].classList.contains('bomb')) total++     // !links unten
+                if (i < 189 && !isRightEdge && squares[i + 1 + width].classList.contains('bomb')) total++    // !rechts unten
+                if (i < 190 && squares[i + width].classList.contains('bomb')) total++                        // !unten
                 squares[i].setAttribute('data', total)
                 console.log(squares)
 
-                // ACHTUNG: Bug --> Zahlen werden nach Wal nicht mehr richtig angezeigt
-                // Richtungen funktionieren nicht: alle unten und rechts
             }
         }
     }
@@ -176,6 +174,18 @@ document.addEventListener('DOMContentLoaded', () => { // notwendig, damit html v
 
         // Game Over
         if (square.classList.contains('bomb')) {
+            if (scorenumber == 1){
+                scorecounter1 -= 10
+                console.log("score1: " + scorecounter1)
+                score1.innerHTML = scorecounter1
+                scorenumber = 2
+            } else {
+                scorecounter2 -= 10
+                console.log("score2: " + scorecounter2)
+                score2.innerHTML = scorecounter2
+                scorenumber = 1
+            }
+
 
             shark(square)
 
