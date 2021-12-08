@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => { // notwendig, damit html v
                 if (i < 89 && !isRightEdge && squares[i + 1 + width].classList.contains('bomb')) total++    // rechts unten
                 if (i < 90 && squares[i + width].classList.contains('bomb')) total++                        // unten
                 squares[i].setAttribute('data', total)
+                //console.log(squares)
             }
         }
     }
@@ -133,6 +134,7 @@ document.addEventListener('DOMContentLoaded', () => { // notwendig, damit html v
                 if (i < 89 && !isRightEdge && squares[i + 1 + width].classList.contains('bomb')) total++    // !rechts unten
                 if (i < 90 && squares[i + width].classList.contains('bomb')) total++                        // !unten
                 squares[i].setAttribute('data', total)
+                console.log(squares)
 
                 // ACHTUNG: Bug --> Zahlen werden nach Wal nicht mehr richtig angezeigt
                 // Richtungen funktionieren nicht: alle unten und rechts
