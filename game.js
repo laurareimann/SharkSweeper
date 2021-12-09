@@ -175,12 +175,12 @@ document.addEventListener('DOMContentLoaded', () => { // notwendig, damit html v
         // Game Over
         if (square.classList.contains('bomb')) {
             if (scorenumber == 1){
-                scorecounter1 -= 10
+                scorecounter1 -= 5
                 console.log("score1: " + scorecounter1)
                 score1.innerHTML = scorecounter1
                 scorenumber = 2
             } else {
-                scorecounter2 -= 10
+                scorecounter2 -= 5
                 console.log("score2: " + scorecounter2)
                 score2.innerHTML = scorecounter2
                 scorenumber = 1
