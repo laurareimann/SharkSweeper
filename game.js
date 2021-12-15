@@ -1,5 +1,10 @@
-// Quelle: https://www.youtube.com/watch?v=W0No1JDc6vE
-// https://github.com/kubowania/minesweeper
+/* Quellen: 
+
+Minesweeper-Code:
+https://www.youtube.com/watch?v=W0No1JDc6vE
+https://github.com/kubowania/minesweeper
+
+*/
 
 document.addEventListener('DOMContentLoaded', () => { // notwendig, damit html vor dem js gelesen wird
 
