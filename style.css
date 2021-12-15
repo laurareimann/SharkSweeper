@@ -158,11 +158,14 @@ div{
   }
 
   .score1 {
-    position: absolute; top: 380px; left: 5px; width: 300px;
+    position: relative; top: -230px; right: 235px; 
     transform: rotate(90deg);
+    
+    
   }
   
   .score2 {
-    position: absolute; top: 380px; right: 5px; width: 300px;
+    position: relative; top: -275px; left: 235px; 
     transform: rotate(270deg);
   }
+  
