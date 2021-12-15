@@ -23,6 +23,7 @@ text-align: center;
 color:aliceblue;
 font-size: 40px;
 font-family: 'TitleFont';
+
 }
 
 .grid {
@@ -47,7 +48,8 @@ div{
     font-size: 30px;
     text-align: center;
     line-height: 40px;
-    color: white;  
+    color: white;
+      
 }
 
 .valid {
@@ -155,3 +157,12 @@ div{
     color: #ff0909;
   }
 
+  .score1 {
+    position: absolute; top: 380px; left: 5px; width: 300px;
+    transform: rotate(90deg);
+  }
+  
+  .score2 {
+    position: absolute; top: 380px; right: 5px; width: 300px;
+    transform: rotate(270deg);
+  }
