@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => { // notwendig, damit html v
         if (square.classList.contains('checked') || square.classList.contains('flag')) return
 
 
-        // Game Over
+        // Shark
         if (square.classList.contains('bomb')) {
             if (scorenumber == 1){
                 scorecounter1 -= 5
@@ -191,8 +191,8 @@ document.addEventListener('DOMContentLoaded', () => { // notwendig, damit html v
                 scorenumber = 1
             }
 
-
             shark(square)
+            playerTurn()
 
         } else if (square.classList.contains('whale')) {
             square.classList.add('checked')
@@ -204,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => { // notwendig, damit html v
                 }
                 createBoardnoWhale(); 
             },1000) // ACHTUNG: soll eigentlich die Felder nacheinander langsam löschen, funktioniert aber nicht
+            playerTurn()
             
         } else {
             if (square.classList.contains('valid')) {
@@ -232,13 +233,15 @@ document.addEventListener('DOMContentLoaded', () => { // notwendig, damit html v
                 if (total == 7) square.classList.add('checked'),square.innerHTML = "<img src='images/7.png'; width='30'; height='30'>"
                 if (total == 8) square.classList.add('checked'),square.innerHTML = "<img src='images/8.png'; width='30'; height='30'>"
 
-                // square.innerHTML = total
-                return
+                playerTurn()
             }
-            checkSquare(square, currentId)
+                return
         }
+        checkSquare(square, currentId)
         square.classList.add('checked')
     }
+        
+    
 
 
     // shark Function
@@ -273,6 +276,14 @@ document.addEventListener('DOMContentLoaded', () => { // notwendig, damit html v
     }
 
 
+    // Player turn:
+    function playerTurn(){
+        if (scorenumber == 1){
+            scoreturn.innerHTML = 'Player 1'
+        } else {
+            scoreturn.innerHTML = "Player 2"
+        }
+    }       
 
     
 });
