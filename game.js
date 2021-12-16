@@ -223,14 +223,14 @@ document.addEventListener('DOMContentLoaded', () => { // notwendig, damit html v
                 }
 
                 if (total == 0) square.classList.add('checked'),square.innerHTML = "<img src='images/0.png'; width='35'; height='35'>"
-                if (total == 1) square.classList.add('one'),square.innerHTML = "<img src='images/1.png'; width='30'; height='30'>"
-                if (total == 2) square.classList.add('two'),square.innerHTML = "<img src='images/2.png'; width='30'; height='30'>"
-                if (total == 3) square.classList.add('three'),square.innerHTML = "<img src='images/3.png'; width='30'; height='30'>"
-                if (total == 4) square.classList.add('four'),square.innerHTML = "<img src='images/4.png'; width='30'; height='30'>"
-                if (total == 5) square.classList.add('five'),square.innerHTML = "<img src='images/5.png'; width='30'; height='30'>"
-                if (total == 6) square.classList.add('six'),square.innerHTML = "<img src='images/6.png'; width='30'; height='30'>"
-                if (total == 7) square.classList.add('seven'),square.innerHTML = "<img src='images/7.png'; width='30'; height='30'>"
-                if (total == 8) square.classList.add('eight'),square.innerHTML = "<img src='images/8.png'; width='30'; height='30'>"
+                if (total == 1) square.classList.add('checked'),square.innerHTML = "<img src='images/1.png'; width='30'; height='30'>"
+                if (total == 2) square.classList.add('checked'),square.innerHTML = "<img src='images/2.png'; width='30'; height='30'>"
+                if (total == 3) square.classList.add('checked'),square.innerHTML = "<img src='images/3.png'; width='30'; height='30'>"
+                if (total == 4) square.classList.add('checked'),square.innerHTML = "<img src='images/4.png'; width='30'; height='30'>"
+                if (total == 5) square.classList.add('checked'),square.innerHTML = "<img src='images/5.png'; width='30'; height='30'>"
+                if (total == 6) square.classList.add('checked'),square.innerHTML = "<img src='images/6.png'; width='30'; height='30'>"
+                if (total == 7) square.classList.add('checked'),square.innerHTML = "<img src='images/7.png'; width='30'; height='30'>"
+                if (total == 8) square.classList.add('checked'),square.innerHTML = "<img src='images/8.png'; width='30'; height='30'>"
 
                 // square.innerHTML = total
                 return
