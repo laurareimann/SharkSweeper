@@ -75,7 +75,7 @@ div{
     border: 3px solid;
     border-color: #A3E5F0 #3E79DE #3E79DE #A3E5F0;
     box-sizing: border-box;
-    background-color: rgb(206, 96, 96);
+    /*background-color: rgb(206, 96, 96);*/
   }
 
   .whale {
@@ -84,7 +84,7 @@ div{
     border: 3px solid;
     border-color: #A3E5F0 #3E79DE #3E79DE #A3E5F0;
     box-sizing: border-box;
-    background-color: rgb(158, 206, 96);
+    /*background-color: rgb(158, 206, 96);*/
   }
 
   .one {
